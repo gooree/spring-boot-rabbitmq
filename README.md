@@ -9,8 +9,8 @@ spring-boot结合RabbitMQ入门示例
 	  <groupId>org.springframework.boot</groupId>
 	  <artifactId>spring-boot-starter-amqp</artifactId>
     </dependency>
-  ```
-    
+  	```
+
 # RabbitmqApplication
 
   ```java
@@ -31,18 +31,21 @@ spring-boot结合RabbitMQ入门示例
 # 消息Producer
 
   ```java
-  @Autowired
-  private AmqpTemplate amqpTemplate;
+  @Component
+  public class RabbitMQProducer {
+      @Autowired
+      private AmqpTemplate amqpTemplate;
   
-  public void send(Object msg) {		
-		if(msg instanceof String) {
-			amqpTemplate.convertAndSend("wxjfkg", "wxjf", (String) msg);
-		} else {
-			Gson gson = new Gson();
-			String message = gson.toJson(msg);
-			amqpTemplate.convertAndSend("wxjfkg", "wxjf", message);
-		}
-	}
+      public void send(Object msg) {		
+	  if(msg instanceof String) {
+		amqpTemplate.convertAndSend("wxjfkg", "wxjf", (String) msg);
+	  } else {
+		Gson gson = new Gson();
+		String message = gson.toJson(msg);
+		amqpTemplate.convertAndSend("wxjfkg", "wxjf", message);
+          }
+      }
+  }
   ```
   
 # 消息Consumer
