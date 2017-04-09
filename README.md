@@ -9,7 +9,7 @@ spring-boot结合RabbitMQ入门示例
 	  <groupId>org.springframework.boot</groupId>
 	  <artifactId>spring-boot-starter-amqp</artifactId>
     </dependency>
-  	```
+  ```
 
 # RabbitmqApplication
 
@@ -26,10 +26,9 @@ spring-boot结合RabbitMQ入门示例
       }
 
   }
-  ```
-
+  ```
+  
 # 消息Producer
-
   ```java
   @Component
   public class RabbitMQProducer {
