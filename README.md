@@ -22,7 +22,7 @@ spring-boot结合RabbitMQ入门示例
 
       public static void main(String[] args) throws Exception {
           SpringApplication.run(RabbitmqApplication.class, args);
-          logger.info("RabbitmqApplication is starting......>>>>");
+          logger.info("RabbitmqApplication is starting!~>>>>");
       }
 
   }
