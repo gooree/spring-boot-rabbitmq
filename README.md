@@ -4,10 +4,10 @@ spring-boot结合RabbitMQ入门示例
 # 在maven配置文件中加入spring-boot-starter-amqp依赖
   ```xml
     <dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency>
-    ```
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-amqp</artifactId>
+    </dependency>
+  ```
     
 # RabbitmqApplication
   ```java
@@ -23,12 +23,12 @@ spring-boot结合RabbitMQ入门示例
       }
 
   }
-  ```
-  
+  ```
+
 # 消息Producer
   ```java
   @Autowired
-	private AmqpTemplate amqpTemplate;
+  private AmqpTemplate amqpTemplate;
   
   public void send(Object msg) {		
 		if(msg instanceof String) {
