@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: prod
+
+#logback configuration
+logging: 
+  config: "classpath:logback.xml"
+
+#embedded server
+server:
+  port: 8090
+  session: 
+    timeout: 30
+  
+#***production enviroment begin***
+---
+spring:
+  profiles: prod
+  #RabbitMQ
+  rabbitmq: 
+    host: 192.168.7.45
+    port: 5672
+    username: admin
+    password: admin123
+    
+#***production enviroment end***
